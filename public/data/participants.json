@@ -1,0 +1,33 @@
+{
+    "host": {
+        "id": 101,
+        "name": "Amit(Host)",
+        "chanel": "test_channel"
+    },
+    "candidates": [
+        {
+            "id": 1,
+            "name": "Gurpreet",
+            "role": "participant",
+            "chanel": "test_channel"
+        },
+        {
+            "id": 2,
+            "name": "Jyoti",
+            "role": "participant",
+            "chanel": "test_channel"
+        },
+        {
+            "id": 3,
+            "name": "Gaurav",
+            "role": "participant",
+            "chanel": "test_channel"
+        },
+        {
+            "id": 4,
+            "name": "Divesh",
+            "role": "participant",
+            "chanel": "test_channel"
+        }
+    ]
+}

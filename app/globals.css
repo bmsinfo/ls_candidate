@@ -1,0 +1,447 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* globals.css */
+  :root {
+    --primary: 218, 93%, 58%;
+    --primary-light: 217, 93%, 58%;
+    --primary-dodger: 218, 93%, 58%, 0.46;
+    --primary-dodger-light: 219, 71%, 95%;
+    --primary-border-light: 211, 100%, 50%, 0.15;
+
+    --accent-green: 155, 67%, 39%;
+    --accent-red: 0, 84%, 60%;
+    --accent-red-bg: 18, 100%, 96%%;
+
+    --foreground: 222.2 84% 4.9%;
+
+    --grayscale-dark: 227, 78%, 7%;
+    --grayscale-dark-secondary: 213, 59%, 21%;
+    --grayscale-gray: 216, 18%, 34%;
+    --grayscale-gray-light: 102, 112, 133;
+
+    --grayscale-mid: 0, 0%, 42%;
+    --grayscale-mid-secondary: 217, 16%, 84%;
+    --grayscale-mid-light: 216, 6%, 85%;
+    --grayscale-mid-lighter: 0, 0%, 84%;
+    --grayscale-mid-highlight: 215, 15%, 90%;
+
+    --grayscale-light: 220, 17%, 93%;
+    --grayscale-light-secondary: 220, 14%, 96%;
+    --grayscale-light-bg: 210, 20%, 98%;
+    --grayscale-light-highlight: 215, 25%, 80%;
+    --grayscale-white: 0, 0%, 100%;
+
+    --background: 0, 0%, 99%;
+    --background-light: 198, 100%, 97%;
+    --background-mid: 0, 0%, 97%;
+    --background-dark: 0, 0%, 0%;
+    --background-transparent: 220, 43%, 11%, 0.05;
+    --background-faded: 0, 0%, 0%, 0.7;
+
+    --highlight-blue: 216, 235, 244;
+    --custom-gradient-blend-mode: multiply;
+    --radius: 0.5rem;
+    --radius-2: 1.25rem;
+  }
+
+  .dark {
+    --primary: 217, 69%, 50%;
+    --primary-light: 217, 70%, 55%;
+    --primary-dodger: 217, 69%, 50%, 0.75;
+    --primary-dodger-light: 217, 69%, 50%, 0.1;
+    --primary-border-light: 211, 100%, 50%, 0.15;
+
+    --accent-green: 154, 60%, 35%;
+    --accent-red: 0, 78%, 49%;
+    --accent-red-bg: 15, 90%, 20%;
+
+    --foreground: 210 40% 98%;
+
+    --grayscale-dark: 0, 0%, 90%;
+    --grayscale-dark-secondary: 0, 0%, 80%;
+    --grayscale-gray: 0, 0%, 70%;
+    --grayscale-gray-light: 0, 0%, 60%;
+
+    --grayscale-mid: 0, 0%, 50%;
+    --grayscale-mid-secondary: 0, 0%, 40%;
+    --grayscale-mid-light: 0, 0%, 30%;
+    --grayscale-mid-lighter: 0, 0%, 25%;
+    --grayscale-mid-highlight: 0, 0%, 20%;
+
+    --grayscale-light: 0, 0%, 15%;
+    --grayscale-light-secondary: 0, 0%, 10%;
+    --grayscale-light-bg: 0, 0%, 5%;
+    --grayscale-white: 0, 0%, 0%;
+
+    --background: 222.2 84% 4.9%;
+    --background-light: 0, 0%, 10%;
+    --background-mid: 0, 0%, 20%;
+    --background-dark: 0, 0%, 0%;
+    --background-transparent: 0, 0%, 50%, 0.05;
+    --background-faded: 0, 0%, 0%, 0.7;
+    --highlight-blue: 210, 70%, 30%;
+    --custom-gradient-blend-mode: multiply;
+    --radius: 0.5rem;
+    --radius-2: 1.25rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply font-robot;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  /* h1,
+  label {
+    @apply text-base 2xl:text-lg short-md:text-sm  font-medium;
+  } */
+  h1,
+  label {
+    @apply text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl;
+  }
+
+  /* h2 {
+    @apply text-3xl font-bold tracking-tight md:text-4xl lg:text-5xl;
+  }
+
+  h3 {
+    @apply text-2xl font-bold tracking-tight md:text-3xl lg:text-4xl;
+  }
+
+  h4 {
+    @apply text-xl font-bold tracking-tight md:text-2xl lg:text-3xl;
+  }
+
+  h5 {
+    @apply text-lg font-bold tracking-tight md:text-xl lg:text-2xl;
+  }
+
+  h6 {
+    @apply text-base font-bold tracking-tight md:text-lg lg:text-xl;
+  } */
+
+  p {
+    @apply text-base 2xl:text-xl leading-relaxed;
+  }
+
+  /* Remove scrollbar */
+  .remove-scrollbar::-webkit-scrollbar {
+    width: 0px !important;
+    height: 0px !important;
+    border-radius: 0px !important;
+  }
+
+  .remove-scrollbar::-webkit-scrollbar-track {
+    background: transparent !important;
+  }
+
+  .remove-scrollbar::-webkit-scrollbar-thumb {
+    background: transparent !important;
+    border-radius: 0px !important;
+  }
+
+  .remove-scrollbar::-webkit-scrollbar-thumb:hover {
+    /* background: #1e2238; */
+    background: transparent !important;
+  }
+}
+
+/* // H1 (Main Heading): 32–48 px (depending on importance and platform)
+// H2 (Subheading): 24–32 px
+// H3 (Section Title): 18–24 px
+// H4, H5, H6 (Smaller Titles): 14–18 px */
+
+@layer utilities {
+  /* ===== UTILITIES */
+
+  .font-32-37\.5-400 {
+    font-size: 2rem; /* 32px; */
+    line-height: 2.344rem; /*  37.5px; */
+    font-weight: 400;
+  }
+  .font-20-32-400 {
+    font-size: 1.25rem; /* 20px; */
+    line-height: 2rem; /* 32px; */
+    font-weight: 400;
+  }
+  .font-20-32-600 {
+    font-size: 1.25rem; /* 20px; */
+    line-height: 2rem; /* 32px; */
+    font-weight: 600;
+  }
+  .font-20-24-700 {
+    font-size: 1.25rem; /* 20px; */
+    line-height: 1.5rem; /* 24px; */
+    font-weight: 700;
+  }
+  .font-20-24-600 {
+    font-size: 1.25rem; /* 20px; */
+    line-height: 1.5rem; /* 24px; */
+    font-weight: 600;
+  }
+  .font-20-23-400 {
+    font-size: 1.25rem; /* 20px; */
+    line-height: 1.465rem; /* 23.44px; */
+    font-weight: 400;
+  }
+  .font-20-23-600 {
+    font-size: 1.25rem; /* 20px; */
+    line-height: 1.465rem; /* 23.44px; */
+    font-weight: 600;
+  }
+  .font-24-32-600 {
+    @apply font-semibold text-2xl;
+  }
+
+  .font-24-28-400 {
+    font-size: 1.5rem; /* 24px; */
+    line-height: 1.75rem; /* 28px; */
+    font-weight: 400;
+  }
+
+  .font-16-28-400 {
+    font-size: 1rem; /* 16px; */
+    line-height: 1.75rem; /* 28px; */
+    font-weight: 400;
+  }
+  .font-16-24-500 {
+    font-size: 1rem; /* 16px; */
+    line-height: 1.5rem; /* 24px; */
+    font-weight: 500;
+  }
+  .font-16-24-400 {
+    font-size: 1rem; /* 16px; */
+    line-height: 1.5rem; /* 24px; */
+    font-weight: 400;
+  }
+  .font-16-24-600 {
+    font-size: 1rem; /* 16px; */
+    line-height: 1.5rem; /* 24px; */
+    font-weight: 600;
+  }
+  .font-16-20-400 {
+    font-size: 1rem; /* 16px; */
+    line-height: 1.25rem; /* 20px; */
+    font-weight: 400;
+  }
+  .font-18-28-600 {
+    font-size: 1.125rem; /* 18px; */
+    line-height: 1.75rem; /* 28px; */
+    font-weight: 600;
+  }
+  .font-14-20-400 {
+    font-size: 0.875rem; /* 14px; */
+    line-height: 1.25rem; /* 20px; */
+    font-weight: 400;
+  }
+  .font-14-20-600 {
+    font-size: 0.875rem; /* 14px; */
+    line-height: 1.25rem; /* 20px; */
+    font-weight: 600;
+  }
+  .font-14-16-600 {
+    font-size: 0.875rem; /* 14px; */
+    line-height: 1rem; /* 16px; */
+    font-weight: 600;
+  }
+  /* custom heights */
+  .h-6px {
+    height: 0.375rem;
+  }
+  .h-14px {
+    height: 0.875rem;
+  }
+  .h-22px {
+    height: 1.375rem;
+  }
+  .h-47px {
+    height: 2.938rem;
+  }
+  .h-76px {
+    height: 4.75rem;
+  }
+  .h-84px {
+    height: 5.25rem;
+  }
+  .h-92px {
+    height: 5.75rem;
+  }
+  .h-97px {
+    height: 6.063rem;
+  }
+  .h-140px {
+    height: 8.75rem;
+  }
+  .h-364px {
+    height: 22.75rem;
+  }
+  .h-440px {
+    height: 27.5rem;
+  }
+  /* custom width */
+  .w-85px {
+    width: 5.313rem;
+  }
+  .w-290px {
+    width: 18.125rem;
+  }
+  .w-508px {
+    width: 31.75rem;
+  }
+  .w-610px {
+    width: 38.125rem;
+  }
+
+  .w-1167px {
+    width: 72.938rem;
+    background-color: red;
+  }
+  .size-14px {
+    width: 0.875rem;
+    height: 0.875rem;
+  }
+
+  .size-100 {
+    width: 6.25rem;
+    height: 6.25rem;
+  }
+  /* custom radius */
+  .rounded-10px {
+    border-radius: 0.625rem;
+  }
+
+  .sidebar {
+    @apply remove-scrollbar w-full max-w-72 flex-col overflow-auto px-7 py-10;
+  }
+  .bg-image {
+    @apply bg-cover bg-no-repeat;
+  }
+
+  .text-main {
+    @apply text-[#ff2c57];
+  }
+  .bg-main {
+    @apply bg-[#001220];
+  }
+}
+
+.custom-gradient {
+  background: linear-gradient(0deg, #ffffff, #ffffff),
+    linear-gradient(0deg, rgba(49, 123, 247, 0.46), rgba(49, 123, 247, 0.46));
+  background-blend-mode: multiply;
+}
+
+.custom-gradient-2 {
+  background: linear-gradient(0deg, #ffffff, #ffffff),
+    linear-gradient(0deg, rgba(49, 123, 247, 0.1), rgba(49, 123, 247, 0.1));
+  background-blend-mode: multiply;
+}
+
+/* loader animations */
+.lds-ring,
+.lds-ring div {
+  box-sizing: border-box;
+}
+.lds-ring {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.lds-ring div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border: 8px solid currentColor;
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: currentColor transparent transparent transparent;
+}
+.lds-ring div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+.lds-ring div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+.lds-ring div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* for web streming */
+video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Styles for screens with a maximum height of less than 768px */
+@media (max-height: 768px) {
+  /* Your styles here */
+  * {
+    /* border: 1px solid red; */
+  }
+  .font-20-23-600 {
+    font-weight: 500;
+    font-size: 1rem;
+  }
+  .font-20-23-400 {
+    font-size: 0.8rem;
+    font-weight: 400;
+    /* @apply text-20-23-600; */
+  }
+}
+
+/* Styles for screens with a maximum height of less than 1024px */
+@media (max-height: 1024px) {
+  /* Your styles here */
+}
+
+/* Styles for screens with a maximum height of less than 1280px */
+@media (max-height: 1280px) {
+  /* Your styles here */
+}
+
+@media screen and (min-width: 1920px) {
+  .max-screen {
+    /*  when screnn is greater than 1920px then we need to set the max-width to 1920px */
+    max-width: 1920px;
+    margin: 0 auto;
+    width: 100%;
+  }
+}
+
+.vhss_character *[id='canvasID:0'] {
+  left: -2rem !important;
+  /* background-color: red !important; */
+}
+
+/* add for sanitize html */
+.sanitize-html-ul {
+  list-style: disc;
+  margin-left: 2rem;
+}
+.sanitize-html-ol {
+  list-style: decimal;
+  margin-left: 2rem;
+}
+.sanitize-html-link {
+  color: #0070f3;
+}
